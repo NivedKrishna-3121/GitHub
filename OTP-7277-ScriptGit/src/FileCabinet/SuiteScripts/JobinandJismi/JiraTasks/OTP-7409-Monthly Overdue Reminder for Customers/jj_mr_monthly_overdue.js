@@ -14,14 +14,14 @@
  * Author: Jobin and Jismi IT Services
  *
  *
- * Date Created: 02-July-2024
+ * Date Created: 03-July-2024
  *
  * Description: This script automates the process of sending monthly email notifications to customers with overdue invoices. It collects relevant invoice data, compiles it into a CSV file, and sends an email with the CSV attached. The email will be sent from the assigned Sales Rep or a static NetSuite Admin if no Sales Rep is assigned
  *
  *
  * REVISION HISTORY
  *
- * @version 1.0 company name: 02-July-2024: Created the initial build by JJ0354
+ * @version 1.0 company name: 03-July-2024: Created the initial build by JJ0354
  *
  *
  *

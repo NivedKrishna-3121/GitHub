@@ -2,10 +2,6 @@
  * @NApiVersion 2.1
  * @NScriptType MapReduceScript
  */
-/**
- * @NApiVersion 2.1
- * @NScriptType Suitelet
- */
 /**********************************************************************************
  * OTP-7409 : Monthly Over Due Reminder for Customer
  *

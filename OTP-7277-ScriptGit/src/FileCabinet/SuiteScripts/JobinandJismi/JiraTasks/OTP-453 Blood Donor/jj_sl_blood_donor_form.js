@@ -93,45 +93,10 @@ define(["N/record", "N/search", "N/ui/serverWidget"], /**
         id: "custpage_jj_blood_group",
         label: "Blood Group",
         type: serverWidget.FieldType.SELECT,
+        source :"customlist_jj_blood_group",
         container: "custpage_jj_details",
       });
-      bloodGroup.addSelectOption({
-        value: "",
-        text: "",
-      });
-      bloodGroup.addSelectOption({
-        value: "A+",
-        text: "A+",
-      });
-      bloodGroup.addSelectOption({
-        value: "A-",
-        text: "A-",
-      });
-      bloodGroup.addSelectOption({
-        value: "B+",
-        text: "B+",
-      });
-      bloodGroup.addSelectOption({
-        value: "B-",
-        text: "B-",
-      });
-      bloodGroup.addSelectOption({
-        value: "O+",
-        text: "O+",
-      });
-      bloodGroup.addSelectOption({
-        value: "O-",
-        text: "O-",
-      });
-      bloodGroup.addSelectOption({
-        value: "AB+",
-        text: "AB+",
-      });
-      bloodGroup.addSelectOption({
-        value: "AB-",
-        text: "AB-",
-      });
-
+      
       let lastDonationDate = form.addField({
         id: "custpage_jj_last_donation_date",
         label: "Last Donation Date",
@@ -150,8 +115,21 @@ define(["N/record", "N/search", "N/ui/serverWidget"], /**
       let gender = scriptContext.request.parameters.custpage_jj_gender;
       let phone = scriptContext.request.parameters.custpage_jj_phone_number;
       let bloodGroup = scriptContext.request.parameters.custpage_jj_blood_group;
-      let lastDonationDate =
-        scriptContext.request.parameters.custpage_jj_last_donation_date;
+      let lastDonationDate =scriptContext.request.parameters.custpage_jj_last_donation_date;
+
+
+      // Function to convert date to M/D/YYYY format
+      function formatDateToMDY(dateString) {
+        let date = new Date(dateString);
+        let month = date.getMonth() + 1;
+        let day = date.getDate();
+        let year = date.getFullYear();
+        return month + '/' + day + '/' + year;
+    }
+
+    // let formattedDate = formatDateToMDY(lastDonationDate);
+
+    let Fdate = new Date(lastDonationDate)
 
       let rec = record.create({
         type: "customrecord__jj_blood_donor",
@@ -162,7 +140,7 @@ define(["N/record", "N/search", "N/ui/serverWidget"], /**
       rec.setValue("custrecord_jj_blood_donor_gender", gender);
       rec.setValue("custrecord_jj_blood_donor_phone_number", phone);
       rec.setValue("custrecord_jj_blood_donor_blood_group", bloodGroup);
-      rec.setValue("custrecord_jj_blood_donor_donation_date",lastDonationDate);
+      rec.setValue("custrecord_jj_blood_donor_donation_date",Fdate);
 
       let recId = rec.save();
       scriptContext.response.write(

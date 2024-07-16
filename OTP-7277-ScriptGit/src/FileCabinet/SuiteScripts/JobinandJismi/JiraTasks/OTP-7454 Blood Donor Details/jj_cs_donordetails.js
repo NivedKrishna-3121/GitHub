@@ -15,14 +15,14 @@
  * Author: Jobin and Jismi IT Services
  *
  *
- * Date Created: 05-July-2024
+ * Date Created: 16-July-2024
  *
  * Description: This script is for displaying the data in a custom record concurrently based on filters provided by the user in the custom form.
  *
  *
  * REVISION HISTORY
  *
- * @version 1.0 company name: 05-July-2024: Created the initial build by JJ0350
+ * @version 1.0 company name: 05-July-2024: Created the initial build by JJ0354
  *
  *
  *
